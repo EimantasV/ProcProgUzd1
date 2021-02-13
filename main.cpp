@@ -3,48 +3,74 @@ using namespace std;
 
 int main()
 {
-    string sw = "Sveikas, ";
+    string sw;
     string jeff;
     cout << "Vardas: ";
     cin >> jeff;
     cout << endl;
+    cout << "Horizontalus tarpai: ";
+    int horiTarpai=1;
+    cin >> horiTarpai;
+    cout << endl;
+    cout << "Vertikalus tarpai: ";
+    int vertTarpai=1;
+    cin >> vertTarpai;
+    cout << endl;
+
+    if(jeff[jeff.length()-1]=='s')
+    {
+        sw = "Sveikas, ";
+    }
+    else{
+        sw = "Sveika, ";
+    }
+
     int txtLen = sw.length() + jeff.length();
 
-    string eilutes[5];
+    //---------------------
+    for(int i =0;i<txtLen+3+horiTarpai*2;i++)
+    {
+        cout << "*";
+    }
+    cout <<endl;
+    //---------------------
+    for(int v = 0;v<vertTarpai;v++)
+    {
+        cout << "*";
+        for(int i =0;i<txtLen+1+horiTarpai*2;i++)
+        {
+            cout <<" ";
+        }
+        cout<<"*";
+        cout<<endl;
+    }
+    //---------------------
+    cout << "*";
+    for(int i =0;i<horiTarpai;i++) cout << " ";
+    cout<< sw << jeff << "!";
+    
+    for(int i =0;i<horiTarpai;i++) cout << " ";
+    cout << "*";
+    cout <<endl;
+    //---------------------
+    for(int v = 0;v<vertTarpai;v++)
+    {
+        cout << "*";
+        for(int i =0;i<txtLen+1+horiTarpai*2;i++)
+        {
+            cout <<" ";
+        }
+        cout<<"*";
+        cout<<endl;
+    }
+    //---------------------
+    for(int i =0;i<txtLen+3+horiTarpai*2;i++)
+    {
+        cout << "*";
+    }
+    cout <<endl;
+    //---------------------
 
-    //---------------------
-    for(int i =0;i<txtLen+5;i++)
-    {
-        eilutes[0] +="*";
-    }
-    //---------------------
-    eilutes[1] +="*";
-    for(int i =0;i<txtLen+3;i++)
-    {
-        eilutes[1] +=" ";
-    }
-    eilutes[1] +="*";
-    //---------------------
-    eilutes[2] = "* " + sw + jeff + "! *";
-    //---------------------
-    eilutes[3] += "*";
-    for(int i =0;i<txtLen+3;i++)
-    {
-        eilutes[3] += " ";
-    }
-    eilutes[3] += "*";
-    //---------------------
-    for(int i =0;i<txtLen+5;i++)
-    {
-        eilutes[4] += "*";
-    }
-    //---------------------
-
-    for(int i=0;i<5;i++)
-    {
-        cout <<endl;
-        cout <<eilutes[i];
-    }
     cout << endl;
     system("pause");
     return 0;
